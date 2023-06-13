@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Didot';
+  src: url('../fonts/Didot-Bold.woff2') format('woff2'),
+      url('../fonts/Didot-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.cta {
+  background: transparent;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.625px;
+  text-align: left;
+}
+
+.cta .icon {
+  max-width: 43px;
+  width: 100%;
+  height: 43px;
+  margin-right: 22px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(90deg, #611818 0%, #A36754 100%);
+  border: 1px solid #979797;
+  min-height: 55px;
+  padding: 5px 57.5px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 1.69286px;
+}
+
+/* animation starts */
+.ease-in {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+/* animation ends */
+
+.hero {
+  overflow: hidden;
+}
+
+.hero .hero-bg .bg-plain {
+  background-color: #611818;
+  max-width: 413px;
+  width: 100%;
+}
+
+.hero .hero-bg .bg-image {
+  background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+  flex: 1;
+}
+
+.hero .hero-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 187px;
+}
+
+.hero .hero-content > .inner{
+  transition: 0.3s all ease;
+}
+
+.hero .hero-content > .inner.hide{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero .hero-content h1 {
+  font-size: 224px;
+  line-height: 289px;
+  font-family: 'Didot';
+  font-weight: 700;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.hero .hero-content .cta-wrap{
+  position: relative;
+}
+
+.hero .hero-content .cta {
+  max-width: 215px;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition-delay: 0.3s;
+}
+
+.hero .social-links {
+  position: absolute;
+  right: 31px;
+  bottom: 39px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .social-links a {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.hero .social-links a svg{
+  margin: 0;
+  width: 68px;
+  height: 68px;
+}
+
+.hero .more-detail-card {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.3);
+  max-width: 580px;
+  width: 100%;
+  top: calc(50% + 145px);
+  transform: translateY(-50%);
+  left: 187px;
+  max-height: 633px;
+  overflow: hidden;
+  height: 0;
+  width: 0;
+  transition: 0.6s all ease;
+  pointer-events: none;
+  border-radius: 100%;
+  display: flex;
+}
+
+.hero .more-detail-card.open {
+  height: 95vh;
+  width: 100%;
+  pointer-events: all;
+  border-radius: 0;
+  top: 50%;
+}
+
+.hero .more-detail-card .inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .more-detail-card .card-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 23px;
+  background: #fff;
+}
+
+.hero .more-detail-card .card-body {
+  padding: 0 72px 78px 66px;
+}
+
+.hero .more-detail-card .card-heading {
+  font-size: 66px;
+  line-height: 85px;
+  font-family: 'Didot';
+  font-weight: 700;
+  color: #611818;
+  margin-bottom: 26px;
+}
+
+.hero .more-detail-card .description p {
+  margin-bottom: 29px;
+}
+
+/* responsiveness starts */
+
+@media screen and (max-width: 1199px) {
+  
+  .cta {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  
+  .cta .icon {
+    max-width: 30px;
+    height: 30px;
+    margin-right: 12px;
+  }
+  
+  .hero .hero-bg .bg-plain {
+    max-width: 250px;
+  }
+  
+  .hero .hero-content {
+    padding: 0 85px;
+  }
+  
+  .hero .hero-content .cta {
+    max-width: 153px;
+  }
+  
+  .hero .hero-content h1 {
+    font-size: 174px;
+    line-height: 239px;
+  }
+  
+  .hero .social-links {
+    right: 25px;
+    bottom: 20px;
+  }
+  
+  .hero .social-links a {
+    margin-top: 10px;
+  }
+  
+  .hero .social-links a svg{
+    width: 40px;
+    height: 40px;
+  }
+  
+  .hero .more-detail-card {
+    top: calc(50% + 117px);
+    left: 85px;
+    max-height: 550px;
+  }
+  
+  .hero .more-detail-card .card-header {
+    padding: 15px;
+  }
+  
+  .hero .more-detail-card .card-body {
+    padding: 0 15px 60px 15px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  .hero .hero-bg .bg-plain {
+    display: none;
+  }
+
+  .hero .hero-bg .bg-image {
+    background: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    flex: 1;
+  }
+
+  .hero .hero-content {
+    padding: 0 15px;
+  }
+
+  .hero .hero-content h1 {
+    text-shadow: 0 8px 18px rgba(0,0,0,.68);
+    transform: translateY(50px);
+  }
+
+  .hero .hero-content .cta {
+    text-shadow: 0 8px 18px rgba(0,0,0,.68);
+    transform: translateY(50px);
+  }
+
+  .hero .more-detail-card {
+    left: 25px;
+  }
+
+  .hero .more-detail-card.open {
+    width: calc(100% - 50px);
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+
+  .hero .hero-content h1 {
+    font-size: 120px;
+    line-height: 185px;
+  }
+
+  .hero .more-detail-card {
+    top: calc(50% + 90px);
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+
+  .btn {
+    min-height: 45px;
+    padding: 5px 27.5px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .hero .hero-content h1 {
+    font-size: 90px;
+    line-height: 155px;
+  }
+
+  .hero .more-detail-card .card-heading {
+    font-size: 46px;
+    line-height: 65px;
+    margin-bottom: 16px;
+  }
+
+  .hero .more-detail-card {
+    top: calc(50% + 75px);
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+  .hero .hero-content h1 {
+    font-size: 70px;
+    line-height: 120px;
+  }
+  .hero .more-detail-card {
+    top: calc(50% + 58px);
+  }
+}
+
+/* responsiveness ends */
